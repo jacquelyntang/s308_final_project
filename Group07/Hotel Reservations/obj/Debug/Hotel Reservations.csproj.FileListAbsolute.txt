@@ -209,3 +209,6 @@ C:\Users\tangyuan\Desktop\Group07\Hotel Reservations\bin\Debug\Newtonsoft.Json.x
 J:\Final Project\Group07\Hotel Reservations\bin\Debug\Hotel Reservations.exe.config
 J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.exe
 J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.pdb
+K:\Final Group Project\Group07\Hotel Reservations\bin\Debug\Hotel Reservations.exe.config
+K:\Final Group Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.exe
+K:\Final Group Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.pdb
