@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+
 
 
 //backdround image: http://www.easyfairs.com/fileadmin/groups/10/Guest_2017/_OGA1J00.jpg
@@ -23,7 +26,7 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class RoomManagement : Window
     {
-        // Put the rooms into the roomtype class for reference later
+        // Delete these use just Json File-----Put the rooms into the roomtype class for reference later
 
         RoomType rmtPresidential = new RoomType("One King Presidential Suite",5,289);
         RoomType rmtKing = new RoomType("One King", 30, 179);
@@ -34,15 +37,30 @@ namespace Hotel_Reservations
 
         RoomType rmtSelectedRoom = new RoomType();
 
+        List<RoomType> lstRoom = new List<RoomType>();
+
+        string strFilePath = @"..\..\..\Data Files\Rooms.json";
+
         double dblPrice;
         int intQuantity;
-        bool bolSelectedIndex=false; 
+        bool bolSelectedIndex=false;
+        string strJsonData;
 
         public RoomManagement()
         {
             InitializeComponent();
-            
 
+            //Take Get room data from json file to use later in the document
+            try
+            {
+                strJsonData = File.ReadAllText(strFilePath);
+                lstRoom = JsonConvert.DeserializeObject<List<RoomType>>(strJsonData);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to find file. Please try again later.");
+            }
         }
 
         private void btnRMSave_Click(object sender, RoutedEventArgs e)
@@ -74,6 +92,19 @@ namespace Hotel_Reservations
                 return;
             }
             #endregion
+
+
+            //MessageBox to Confirm that changes are wanted
+            MessageBoxResult mbrSaveConfirm = MessageBox.Show("-----------------", 
+                "Are you sure you would like to make this change.", MessageBoxButton.YesNo);
+
+            if (mbrSaveConfirm == MessageBoxResult.No)
+            { return; }
+            else
+            //load information into json document for external save
+            {
+
+            }
 
             //Move to Confirmation Page and close this window
             RMConfirmation RMConfirmWindow = new RMConfirmation();
@@ -116,8 +147,7 @@ namespace Hotel_Reservations
             switch (intSelectedIndex) 
             {
                 case 1:
-                    {   rmtSelectedRoom = rmtKing;
-                        
+                    {   rmtSelectedRoom = rmtKing; 
                         break;
                     }
                 case 2:
@@ -142,7 +172,6 @@ namespace Hotel_Reservations
                     }
                 default:
                     {   bolSelectedIndex = false;
-                        
                         break;
                     }
             }
@@ -175,9 +204,7 @@ namespace Hotel_Reservations
                 }
                 //When first entering window have a catch for the null exception
                 catch
-                {
-                   
-                }
+                { }
             }
 
         }
