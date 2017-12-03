@@ -100,19 +100,8 @@ namespace Hotel_Reservations
 
         private void cbxRoomType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Clear out the outputs
-            try
-            {
-                //lblPriceLabel.Visibility = 0;
-                
-                //lblRoomType.Content = "";
-                //txtPriceInput.Text = "";
-                //txtQuantityInput.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occured");
-            }
+            
+            
 
             #region Change Labels with Room Selection
 
@@ -153,26 +142,43 @@ namespace Hotel_Reservations
                     }
                 default:
                     {   bolSelectedIndex = false;
+                        
                         break;
                     }
             }
 
+
             #endregion
 
 
+           
             //Display the Room Information based on the selected room if room is selected; hide if no room selected
+            //Hide and show save button based on selected index
             if (bolSelectedIndex)
             {
-
                 lblRoomType.Content = rmtSelectedRoom.Type;
 
                 txtQuantityInput.Text = rmtSelectedRoom.Quantity.ToString();
 
                 txtPriceInput.Text = rmtSelectedRoom.Price.ToString();
-               
 
+                btnRMSave.Visibility = Visibility.Visible;
             }
-            
+            else
+            {
+                try
+                {
+                    lblRoomType.Content = " ";
+                    txtQuantityInput.Text = " ";
+                    txtPriceInput.Text = " ";
+                    btnRMSave.Visibility = Visibility.Hidden;
+                }
+                //When first entering window have a catch for the null exception
+                catch
+                {
+                   
+                }
+            }
 
         }
     }
