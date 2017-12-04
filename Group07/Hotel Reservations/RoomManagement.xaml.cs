@@ -143,7 +143,7 @@ namespace Hotel_Reservations
 
             intSelectedIndex = cbxRoomType.SelectedIndex;
 
-            //Use switch statement to determine which RoomType is selected in the combobox
+            //Use switch statement to determine which RoomType is selected in the combobox DELETE NO LONGER NECESSARY
             /*
             switch (intSelectedIndex) 
             {
