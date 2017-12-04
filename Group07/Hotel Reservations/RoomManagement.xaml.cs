@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+
 
 
 //backdround image: http://www.easyfairs.com/fileadmin/groups/10/Guest_2017/_OGA1J00.jpg
@@ -23,7 +26,7 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class RoomManagement : Window
     {
-        // Put the rooms into the roomtype class for reference later
+        // Delete these use just Json File-----Put the rooms into the roomtype class for reference later
 
         RoomType rmtPresidential = new RoomType("One King Presidential Suite",5,289);
         RoomType rmtKing = new RoomType("One King", 30, 179);
@@ -34,15 +37,30 @@ namespace Hotel_Reservations
 
         RoomType rmtSelectedRoom = new RoomType();
 
+        List<RoomType> lstRoom = new List<RoomType>();
+
+        string strFilePath = @"..\..\..\Data Files\Rooms.json";
+
         double dblPrice;
         int intQuantity;
-        bool bolSelectedIndex=false; 
+        bool bolSelectedIndex=false;
+        string strJsonData;
 
         public RoomManagement()
         {
             InitializeComponent();
-            
 
+            //Take Get room data from json file to use later in the document
+            try
+            {
+                strJsonData = File.ReadAllText(strFilePath);
+                lstRoom = JsonConvert.DeserializeObject<List<RoomType>>(strJsonData);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to find file. Please try again later.");
+            }
         }
 
         private void btnRMSave_Click(object sender, RoutedEventArgs e)
@@ -75,6 +93,19 @@ namespace Hotel_Reservations
             }
             #endregion
 
+
+            //MessageBox to Confirm that changes are wanted
+            MessageBoxResult mbrSaveConfirm = MessageBox.Show("-----------------", 
+                "Are you sure you would like to make this change.", MessageBoxButton.YesNo);
+
+            if (mbrSaveConfirm == MessageBoxResult.No)
+            { return; }
+            else
+            //load information into json document for external save
+            {
+
+            }
+
             //Move to Confirmation Page and close this window
             RMConfirmation RMConfirmWindow = new RMConfirmation();
             RMConfirmWindow.Show();
@@ -100,19 +131,8 @@ namespace Hotel_Reservations
 
         private void cbxRoomType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Clear out the outputs
-            try
-            {
-                //lblPriceLabel.Visibility = 0;
-                
-                //lblRoomType.Content = "";
-                //txtPriceInput.Text = "";
-                //txtQuantityInput.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occured");
-            }
+            
+            
 
             #region Change Labels with Room Selection
 
@@ -123,12 +143,13 @@ namespace Hotel_Reservations
 
             intSelectedIndex = cbxRoomType.SelectedIndex;
 
-            //Use switch statement to determine which RoomType is selected in the combobox
+            //Use switch statement to determine which RoomType is selected in the combobox DELETE NO LONGER NECESSARY
+            /*
             switch (intSelectedIndex) 
             {
                 case 1:
-                    {   rmtSelectedRoom = rmtKing;
-                        
+                    {
+                        rmtSelectedRoom = rmtKing; 
                         break;
                     }
                 case 2:
@@ -156,24 +177,58 @@ namespace Hotel_Reservations
                         break;
                     }
             }
+            */
+            
+            if (cbxRoomType.SelectedIndex!=0)
+            {
+                //get the combo-box item content into a string
+                string strRoomLookup = cbxRoomType.Items[intSelectedIndex].ToString();
+                int intRoomLookup = strRoomLookup.IndexOf(':');
+                strRoomLookup = strRoomLookup.Substring(intRoomLookup+1).Trim();
+
+                //get the room from the list that matches strRoomLookup 
+                rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
+
+            }
+            else
+            {
+                bolSelectedIndex = false;
+            }
+
+
 
             #endregion
 
 
+
             //Display the Room Information based on the selected room if room is selected; hide if no room selected
+            //Hide and show save button based on selected index
+
+            
             if (bolSelectedIndex)
             {
-
                 lblRoomType.Content = rmtSelectedRoom.Type;
 
                 txtQuantityInput.Text = rmtSelectedRoom.Quantity.ToString();
 
                 txtPriceInput.Text = rmtSelectedRoom.Price.ToString();
-               
 
+                btnRMSave.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                try
+                {
+                    lblRoomType.Content = " ";
+                    txtQuantityInput.Text = " ";
+                    txtPriceInput.Text = " ";
+                    btnRMSave.Visibility = Visibility.Hidden;
+                }
+                //When first entering window have a catch for the null exception
+                catch
+                { }
             }
             
-
         }
     }
 }
