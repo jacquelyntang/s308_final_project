@@ -128,14 +128,17 @@ namespace Hotel_Reservations
 
         private void btnRMBack_Click(object sender, RoutedEventArgs e)
         {
-            //Create a message box to ask if the user really wishes to exit without saving changes
-            MessageBoxResult mbrCheck = MessageBox.Show("You are about to leave without saving your changes.", "", MessageBoxButton.OKCancel);
+            if (cbxRoomType.SelectedIndex != 0)
 
-            if (mbrCheck == MessageBoxResult.Cancel)
-            { return; }
+            {
+                //Create a message box to ask if the user really wishes to exit without saving changes
+                MessageBoxResult mbrCheck = MessageBox.Show("You are about to leave without saving your changes.", "", MessageBoxButton.OKCancel);
 
-            else
-            //Close window and open main interface
+                if (mbrCheck == MessageBoxResult.Cancel)
+                { return; }
+
+               
+}     else       //Close window and open main interface
             {
                 MainWindow MainWindow = new MainWindow();
                 MainWindow.Show();
