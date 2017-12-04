@@ -26,15 +26,7 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class RoomManagement : Window
     {
-        // Delete these use just Json File-----Put the rooms into the roomtype class for reference later
-
-        RoomType rmtPresidential = new RoomType("One King Presidential Suite",5,289);
-        RoomType rmtKing = new RoomType("One King", 30, 179);
-        RoomType rmtKingDeluxe = new RoomType("One King Deluxe", 10, 189);
-        RoomType rmtQueen = new RoomType("Two Queens", 30, 189);
-        RoomType rmtQueenDeluxe = new RoomType("Two Queen Deluxe", 15, 214);
-        RoomType rmtKingSuite = new RoomType("One King Suite", 10, 249);
-
+       
         RoomType rmtSelectedRoom = new RoomType();
 
         List<RoomType> lstRoom = new List<RoomType>();
@@ -165,41 +157,7 @@ namespace Hotel_Reservations
 
             intSelectedIndex = cbxRoomType.SelectedIndex;
 
-            //Use switch statement to determine which RoomType is selected in the combobox DELETE NO LONGER NECESSARY
-            /*
-            switch (intSelectedIndex) 
-            {
-                case 1:
-                    {
-                        rmtSelectedRoom = rmtKing; 
-                        break;
-                    }
-                case 2:
-                    {   rmtSelectedRoom = rmtKingDeluxe;
-                        break;
-                    }
-                case 3:
-                    {   rmtSelectedRoom = rmtQueen;
-                        break;
-                    }
-                case 4:
-                    {   rmtSelectedRoom = rmtQueenDeluxe;
-                        break;
-                    }
-                case 5:
-                    {   rmtSelectedRoom = rmtKingSuite;
-                        break;
-                    }
-                case 6:
-                    {   rmtSelectedRoom = rmtPresidential;
-                        break;
-                    }
-                default:
-                    {   bolSelectedIndex = false;
-                        break;
-                    }
-            }
-            */
+           
             
             if (cbxRoomType.SelectedIndex!=0)
             {
