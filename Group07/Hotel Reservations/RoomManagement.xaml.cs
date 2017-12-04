@@ -92,18 +92,40 @@ namespace Hotel_Reservations
                 return;
             }
             #endregion
-
+            //create variables
+            int intSelectedIndex = cbxRoomType.SelectedIndex;
+            RoomType rmtSavedRoom = new RoomType(rmtSelectedRoom.Type, intQuantity, dblPrice);
+            
 
             //MessageBox to Confirm that changes are wanted
-            MessageBoxResult mbrSaveConfirm = MessageBox.Show("-----------------", 
-                "Are you sure you would like to make this change.", MessageBoxButton.YesNo);
+            MessageBoxResult mbrSaveConfirm = MessageBox.Show("Are You Sure You Would Like to Make the Following Changes?"+ Environment.NewLine+Environment.NewLine+ rmtSavedRoom.ToString(),"", MessageBoxButton.YesNo);
 
             if (mbrSaveConfirm == MessageBoxResult.No)
             { return; }
             else
             //load information into json document for external save
             {
+                //get the combo-box item content into a string
+                string strRoomLookup = cbxRoomType.Items[intSelectedIndex].ToString();
+                int intRoomLookup = strRoomLookup.IndexOf(':');
+                strRoomLookup = strRoomLookup.Substring(intRoomLookup + 1).Trim();
 
+                //Get the roomindex of the masterdata room that was changed, delete it, and add new room info
+
+                int intRoomIndex= lstRoom.IndexOf(rmtSelectedRoom);
+                lstRoom.RemoveAt(intRoomIndex);
+                lstRoom.Add(rmtSavedRoom);
+
+                //Overwrite  the json file with the new list
+                try
+                {
+                    string strJsonData = JsonConvert.SerializeObject(lstRoom);
+                    File.WriteAllText(strFilePath, strJsonData);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to Save Changes. Please Try Again Later.");
+                }
             }
 
             //Move to Confirmation Page and close this window
@@ -188,7 +210,7 @@ namespace Hotel_Reservations
 
                 //get the room from the list that matches strRoomLookup 
                 rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
-
+               
             }
             else
             {
