@@ -144,10 +144,12 @@ namespace Hotel_Reservations
             intSelectedIndex = cbxRoomType.SelectedIndex;
 
             //Use switch statement to determine which RoomType is selected in the combobox
+            /*
             switch (intSelectedIndex) 
             {
                 case 1:
-                    {   rmtSelectedRoom = rmtKing; 
+                    {
+                        rmtSelectedRoom = rmtKing; 
                         break;
                     }
                 case 2:
@@ -175,14 +177,34 @@ namespace Hotel_Reservations
                         break;
                     }
             }
+            */
+            
+            if (cbxRoomType.SelectedIndex!=0)
+            {
+                //get the combo-box item content into a string
+                string strRoomLookup = cbxRoomType.Items[intSelectedIndex].ToString();
+                int intRoomLookup = strRoomLookup.IndexOf(':');
+                strRoomLookup = strRoomLookup.Substring(intRoomLookup+1).Trim();
+
+                //get the room from the list that matches strRoomLookup 
+                rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
+
+            }
+            else
+            {
+                bolSelectedIndex = false;
+            }
+
 
 
             #endregion
 
 
-           
+
             //Display the Room Information based on the selected room if room is selected; hide if no room selected
             //Hide and show save button based on selected index
+
+            
             if (bolSelectedIndex)
             {
                 lblRoomType.Content = rmtSelectedRoom.Type;
@@ -206,7 +228,7 @@ namespace Hotel_Reservations
                 catch
                 { }
             }
-
+            
         }
     }
 }
