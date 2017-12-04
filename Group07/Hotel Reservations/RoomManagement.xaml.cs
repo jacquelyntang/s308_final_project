@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.IO;
 
-
+//simple change
 
 //backdround image: http://www.easyfairs.com/fileadmin/groups/10/Guest_2017/_OGA1J00.jpg
 //icon: https://www.shareicon.net/data/512x512/2016/08/06/807649_check_512x512.png
