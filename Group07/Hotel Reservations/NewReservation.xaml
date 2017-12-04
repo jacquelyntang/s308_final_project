@@ -46,7 +46,7 @@
         <DatePicker x:Name="dtpCheckIn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,162,0,0" Width="120" Height="24"/>
         <Label x:Name="lblCheckOut" Content="Check-Out Date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,188,0,0" Foreground="White" Height="26" Width="97"/>
         <DatePicker x:Name="dtpCheckOut" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,190,0,0" Width="120" Height="24"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="21,234,0,0" Height="20"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="21,234,0,0" Height="20" Click="btnSearch_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="180,233,0,0" Height="20"/>
         <Label x:Name="lblQuote" Content="Price Quote:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,74,0,0" Foreground="White" Height="26" Width="91"/>
         <TextBox x:Name="txbQuote" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Margin="292,105,0,0" IsTabStop="False" TextChanged="txbQuote_TextChanged" Text="Number of Night:            2                               &#xD;&#xA;Rate per Night:                $179&#xD;&#xA;Subtotal:                          $358&#xD;&#xA;Tax:                                  $383.06&#xD;&#xA;Convenience Fee:            $20&#xD;&#xA;Total:                               $403.06&#xD;&#xA;"/>

@@ -22,7 +22,16 @@ namespace Hotel_Reservations
             
         }
 
+        public override string ToString()
+        {
+            string strOutput = "";
 
+            strOutput = Type + Environment.NewLine + "Quantity: " + Quantity + 
+                Environment.NewLine + "Price: " + Price;
+
+           
+            return strOutput;
+        }
 
     }
 }
