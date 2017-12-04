@@ -26,6 +26,10 @@ namespace Hotel_Reservations
         public NewReservation()
         {
             InitializeComponent();
+            btnContinue.Visibility = Visibility.Hidden;
+            btnNRBack.Visibility = Visibility.Hidden;
+            txbQuote.Visibility = Visibility.Hidden;
+            lblQuote.Visibility = Visibility.Hidden;
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
