@@ -27,7 +27,54 @@ namespace Hotel_Reservations
         {
             InitializeComponent();
         }
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            int intNumOfRoom;
 
+            if (!Int32.TryParse(txbNumOfRoom.Text, out intNumOfRoom))
+            {
+
+                MessageBox.Show("Please enter a whole number as the number of rooms.");
+                return;
+            }
+            if (intNumOfRoom <= 0)
+            {
+                MessageBox.Show("The room cannot be negative or zero.");
+                return;
+            }
+            if (dtpCheckIn.SelectedDate == null)
+            {
+                MessageBox.Show("Must select a check-in date.");
+                return;
+            }
+            if (dtpCheckIn.SelectedDate < DateTime.Now)
+            {
+                MessageBox.Show("Check-in date must not in the past.");
+                return;
+            }
+            
+            if (dtpCheckOut.SelectedDate == null)
+            {
+               MessageBox.Show("Must select a check-out date.");
+               return;
+            }
+            if (dtpCheckIn.SelectedDate > dtpCheckOut.SelectedDate)
+            {
+                MessageBox.Show("The check-out date must be later than the check-in date.");
+                return;
+            }
+            if(dtpCheckOut.SelectedDate< DateTime.Now)
+            {
+                MessageBox.Show("Check-out date must not in the past.");
+                return;
+            }
+
+            btnContinue.Visibility = Visibility.Visible;
+            btnNRBack.Visibility = Visibility.Visible;
+            txbQuote.Visibility = Visibility.Visible;
+            lblQuote.Visibility = Visibility.Visible;
+
+        }
         private void btnNRBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow MainWindow = new MainWindow();
@@ -46,5 +93,8 @@ namespace Hotel_Reservations
         {
 
         }
+
+       
     }
-}
+    }
+

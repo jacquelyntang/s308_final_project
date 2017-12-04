@@ -263,6 +263,12 @@ namespace Hotel_Reservations {
             return;
             case 14:
             this.btnSearch = ((System.Windows.Controls.Button)(target));
+            
+            #line 49 "..\..\NewReservation.xaml"
+            this.btnSearch.Click += new System.Windows.RoutedEventHandler(this.btnSearch_Click);
+            
+            #line default
+            #line hidden
             return;
             case 15:
             this.btnClear = ((System.Windows.Controls.Button)(target));
