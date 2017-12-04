@@ -215,3 +215,28 @@ K:\Final Group Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.p
 J:\s308_final_group7\Group07\Hotel Reservations\bin\Debug\Hotel Reservations.exe.config
 J:\s308_final_group7\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.exe
 J:\s308_final_group7\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.pdb
+J:\Final Project\Group07\Hotel Reservations\bin\Debug\Hotel Reservations.exe
+J:\Final Project\Group07\Hotel Reservations\bin\Debug\Hotel Reservations.pdb
+J:\Final Project\Group07\Hotel Reservations\bin\Debug\Newtonsoft.Json.dll
+J:\Final Project\Group07\Hotel Reservations\bin\Debug\Newtonsoft.Json.xml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.csprojResolveAssemblyReference.cache
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\MainWindow.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\NewReservation.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\PaymentInfo.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\PIConfirmation.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\ReservationsReport.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\RoomManagement.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\RMConfirmation.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\App.g.cs
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations_MarkupCompile.cache
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations_MarkupCompile.lref
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\MainWindow.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\NewReservation.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\PaymentInfo.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\PIConfirmation.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\ReservationsReport.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\RoomManagement.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\RMConfirmation.baml
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.g.resources
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel_Reservations.Properties.Resources.resources
+J:\Final Project\Group07\Hotel Reservations\obj\Debug\Hotel Reservations.csproj.GenerateResource.Cache

@@ -27,9 +27,23 @@
         <Button x:Name="btnPIEdit" Content="Edit" HorizontalAlignment="Left" Margin="420,276,0,0" VerticalAlignment="Top" Width="75" Click="btnRMEdit_Click"/>
         <Label x:Name="lblConfirmationLabel" Content="Reservation Confirmation" HorizontalAlignment="Center" Margin="23,26,240,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="256"/>
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,60,0,0"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="109,63,0,0"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="129,63,0,0"/>
         <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,86,0,0"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="109,91,0,0"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="129,89,0,0"/>
+        <Label x:Name="lblCCType" Content="Credit Card Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,112,0,0"/>
+        <TextBox x:Name="txtCCType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="129,115,0,0"/>
+        <Label x:Name="lblCCNumber" Content="Credit Card Number:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,138,0,0"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="147,143,0,0"/>
+        <Label x:Name="lblPhone" Content="Phone:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,164,0,0"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="147,168,0,0"/>
+        <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,190,0,0"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="147,196,0,0"/>
+        <Label x:Name="lblRoomType" Content="Room Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,216,0,0"/>
+        <TextBox x:Name="txtRoomType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="147,220,0,0"/>
+        <Label x:Name="lblNumberOfRoom" Content="Number Of Room:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,242,0,0"/>
+        <TextBox x:Name="txtNumberOfRoom" HorizontalAlignment="Left" Height="23" Margin="147,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblCheckInDate" Content="Check-in Date: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,60,0,0"/>
+        <TextBox x:Name="txtCheckInDate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="397,60,0,0"/>
 
     </Grid>
 </Window>
