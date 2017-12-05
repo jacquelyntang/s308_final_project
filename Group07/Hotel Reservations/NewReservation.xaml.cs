@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 
 //background image:http://www.linspark.com/images/hotel-2.jpg
@@ -23,6 +25,8 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class NewReservation : Window
     {
+        string strFilePath = @"..\..\..\Data Files\NewReservationTemp.json";
+
         public NewReservation()
         {
             InitializeComponent();
@@ -77,7 +81,8 @@ namespace Hotel_Reservations
             btnNRBack.Visibility = Visibility.Visible;
             txbQuote.Visibility = Visibility.Visible;
             lblQuote.Visibility = Visibility.Visible;
-
+            
+           
         }
         private void btnNRBack_Click(object sender, RoutedEventArgs e)
         {
@@ -88,6 +93,23 @@ namespace Hotel_Reservations
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
+            //Save this pages information to a jason file so as to be recalled later if user confirms new res
+            try
+            {
+                //I need some sort of class to stor my data into and then add it to a list, then it can go to the json file
+                string strJsonData;
+                //strJsonData = JsonConvert.SerializeObject();
+                //File.WriteAllText(strFilePath, strJsonData);
+
+            }
+            //Catch errors and don't let users continue if unable to save new res info
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to Continue at this moment. Please, try again later.");
+                return;
+            }
+
+            //Close this window and move to the payment info page
             PaymentInfo PayInfoWindow = new PaymentInfo();
             PayInfoWindow.Show();
             this.Close();

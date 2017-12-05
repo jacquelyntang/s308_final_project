@@ -29,5 +29,24 @@ namespace Hotel_Reservations
             Total = total;
         }
 
+       /*
+       //I need a variable to store this info in order to right to a json file
+            public RoomType Room { get; set; }
+            public int NumberofRoom { get; set; }
+            public DateTime Checkin { get; set; }
+            public DateTime Checkout { get; set; }
+
+
+            public CheckInInfo(RoomType room, int numberofroom, DateTime checkin, DateTime checkout, int numberOfNight, int ratePerNight, int subtotal, double tax, int convenienceFee, double total)
+            {
+                Room = room;
+                NumberofRoom = numberofroom;
+                Checkin = checkin;
+                Checkout = checkout;
+               
+            }
+            */
+
+        }
     }
-}
+
