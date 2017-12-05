@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="images/RMbackground.jpg"/>
     </Window.Background>
     <Grid>
-        <Rectangle x:Name="recBackground" HorizontalAlignment="Left" Height="321" Stroke="Black" VerticalAlignment="Top" Width="519" RenderTransformOrigin="0.672,0.554">
+        <Rectangle x:Name="recBackground" HorizontalAlignment="Left" Height="321" Stroke="Black" VerticalAlignment="Top" Width="519" RenderTransformOrigin="0.672,0.554" d:IsLocked="True">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FF3A464D" Opacity="0.6"/>
             </Rectangle.Fill>
@@ -24,8 +24,12 @@
 
         <Button x:Name="btnRMConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="295,276,0,0" VerticalAlignment="Top" Width="75" Click="btnRMConfirm_Click"/>
         <Button x:Name="btnRMEdit" Content="Edit" HorizontalAlignment="Left" Margin="420,276,0,0" VerticalAlignment="Top" Width="75" Click="btnRMEdit_Click"/>
-        <Label x:Name="lblConfirmationLabel" Content="Confirmation" HorizontalAlignment="Center" Margin="22,26,344,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="153"/>
-        <TextBox x:Name="txtConfirmOutput" HorizontalAlignment="Left" Height="195" Margin="22,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="473"/>
+        <Label x:Name="lblConfirmationLabel" Content="Room Change Confirmation" HorizontalAlignment="Center" Margin="22,26,277,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Width="220"/>
+        <Label x:Name="lblRoom" Content=" " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,97,0,0" Width="244"/>
+        <Label x:Name="lblRoomQuantityLabel" Content="Quantity: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,154,0,0" Width="80"/>
+        <Label x:Name="lblRoomPriceLabel" Content="Price: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,201,0,0" Width="80"/>
+        <Label x:Name="lblRoomPrice" Content=" " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="224,201,0,0" Width="80"/>
+        <Label x:Name="lblRoomQuantity" Content=" " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="224,154,0,0" Width="80"/>
 
     </Grid>
 </Window>
