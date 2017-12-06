@@ -39,11 +39,9 @@
         <Label x:Name="lblQuantityLabel" Content="Quantity" HorizontalAlignment="Left" Margin="62,169,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblPriceLabel" Content="Price" HorizontalAlignment="Left" Margin="62,202,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBox x:Name="txtPriceInput" HorizontalAlignment="Left" Height="21" Margin="192,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
-        <Label x:Name="lblOccupancyLabel" Content="Current Occupancy" HorizontalAlignment="Left" Margin="62,236,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnRMSave" Content="Save" HorizontalAlignment="Left" Margin="292,286,0,0" VerticalAlignment="Top" Width="75" Click="btnRMSave_Click" Visibility="Hidden"/>
         <Button x:Name="btnRMBack" Content="Back" HorizontalAlignment="Left" Margin="396,286,0,0" VerticalAlignment="Top" Width="75" Click="btnRMBack_Click"/>
         <TextBlock x:Name="txbRMInstructions" HorizontalAlignment="Left" Margin="23,47,0,0" TextWrapping="Wrap" Text="Please select a Room Type and then input  the new quantity and price of the room. Then press the save button to save changes. " VerticalAlignment="Top" Width="380" Foreground="White" FontSize="9.333" Height="31"/>
-        <TextBox x:Name="txtCurrentOccupancy" HorizontalAlignment="Left" Height="21" Margin="192,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
 
     </Grid>
 </Window>

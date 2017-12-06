@@ -131,7 +131,7 @@ namespace Hotel_Reservations {
         
         #line 42 "..\..\RoomManagement.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblOccupancyLabel;
+        internal System.Windows.Controls.Button btnRMSave;
         
         #line default
         #line hidden
@@ -139,7 +139,7 @@ namespace Hotel_Reservations {
         
         #line 43 "..\..\RoomManagement.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnRMSave;
+        internal System.Windows.Controls.Button btnRMBack;
         
         #line default
         #line hidden
@@ -147,23 +147,7 @@ namespace Hotel_Reservations {
         
         #line 44 "..\..\RoomManagement.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnRMBack;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 45 "..\..\RoomManagement.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock txbRMInstructions;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 46 "..\..\RoomManagement.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox txtCurrentOccupancy;
         
         #line default
         #line hidden
@@ -238,31 +222,25 @@ namespace Hotel_Reservations {
             this.txtPriceInput = ((System.Windows.Controls.TextBox)(target));
             return;
             case 12:
-            this.lblOccupancyLabel = ((System.Windows.Controls.Label)(target));
-            return;
-            case 13:
             this.btnRMSave = ((System.Windows.Controls.Button)(target));
             
-            #line 43 "..\..\RoomManagement.xaml"
+            #line 42 "..\..\RoomManagement.xaml"
             this.btnRMSave.Click += new System.Windows.RoutedEventHandler(this.btnRMSave_Click);
             
             #line default
             #line hidden
             return;
-            case 14:
+            case 13:
             this.btnRMBack = ((System.Windows.Controls.Button)(target));
             
-            #line 44 "..\..\RoomManagement.xaml"
+            #line 43 "..\..\RoomManagement.xaml"
             this.btnRMBack.Click += new System.Windows.RoutedEventHandler(this.btnRMBack_Click);
             
             #line default
             #line hidden
             return;
-            case 15:
+            case 14:
             this.txbRMInstructions = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 16:
-            this.txtCurrentOccupancy = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
