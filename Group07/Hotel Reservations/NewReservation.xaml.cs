@@ -26,6 +26,9 @@ namespace Hotel_Reservations
     public partial class NewReservation : Window
     {
         string strFilePath = @"..\..\..\Data Files\NewReservationTemp.json";
+        List<RoomType> lstRoom = new List<RoomType>();
+        RoomType rmtSelectedRoom = new RoomType();
+
 
         public NewReservation()
         {
@@ -37,6 +40,38 @@ namespace Hotel_Reservations
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            //grab the room json file to gather the quantity and price of the room 
+            try
+            {
+                string strRoomPath = @"..\..\..\Data Files\Rooms.json";
+                string strJsonData = File.ReadAllText(strRoomPath);
+                lstRoom = JsonConvert.DeserializeObject<List<RoomType>>(strJsonData);
+
+            }
+            catch
+            {
+                MessageBox.Show("An error occured with fetching the room information. Please try again later.");
+                return;
+            }
+
+
+            int intSelectedIndex = cmbRoomType.SelectedIndex;
+            if (cmbRoomType.SelectedIndex != 0)
+            {
+                //get the combo-box item content into a string
+                string strRoomLookup = cmbRoomType.Items[intSelectedIndex].ToString();
+                int intRoomLookup = strRoomLookup.IndexOf(':');
+                strRoomLookup = strRoomLookup.Substring(intRoomLookup + 1).Trim();
+                rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
+            }
+            else { }
+
+            //get the room from the list that matches strRoomLookup 
+            
+            double dblPrice = rmtSelectedRoom.Price;
+            int intQuantity = rmtSelectedRoom.Quantity;
+
+
             int intNumOfRoom;
 
             if (!Int32.TryParse(txbNumOfRoom.Text, out intNumOfRoom))
@@ -45,7 +80,7 @@ namespace Hotel_Reservations
                 MessageBox.Show("Please enter a whole number as the number of rooms.");
                 return;
             }
-            if (intNumOfRoom <= 0)
+            if (intNumOfRoom <= 0 && intNumOfRoom< intQuantity)
             {
                 MessageBox.Show("The room cannot be negative or zero.");
                 return;
@@ -89,29 +124,6 @@ namespace Hotel_Reservations
             dbltax = dblsubtotal * 0.07;
 
 
-            try
-            {
-                int intSelectedIndex=cmbRoomType.SelectedIndex;
-                if (cmbRoomType.SelectedIndex != 0)
-                {
-                    //get the combo-box item content into a string
-                    string strRoomLookup = cmbRoomType.Items[intSelectedIndex].ToString();
-                    int intRoomLookup = strRoomLookup.IndexOf(':');
-                    strRoomLookup = strRoomLookup.Substring(intRoomLookup + 1).Trim();
-
-                    //get the room from the list that matches strRoomLookup 
-                    rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
-
-                }
-                else
-                {
-                    
-                }
-            }
-            catch
-            {
-
-            }
             //switch (roomrate)
             //{
             //    case "one king":
@@ -128,6 +140,8 @@ namespace Hotel_Reservations
             //        break;
             //}
 
+
+            /*
             int intNumOfDay = (dtpCheckOut.GetValue - dtpCheckIn.GetValue);
             int intConveniceFee = intNumberOfDays * 10;
             txbQuote.Text = "Number of Nights:".PadRight(10) + intNumOfDay + Environment.NewLine +
@@ -136,8 +150,8 @@ namespace Hotel_Reservations
                             "Tax:" + dbltax.ToString() + Environment.NewLine +
                             "Convenience Fee:" + intConvenienceFee.ToString() + Environment.NewLine +
                             "Total:";
-        }
-
+        
+    */
 
     }
     private void btnNRBack_Click(object sender, RoutedEventArgs e)
