@@ -25,7 +25,7 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class NewReservation : Window
     {
-        string strFilePath = @"..\..\..\Data Files\NewReservationTemp.json";
+        
         List<RoomType> lstRoom = new List<RoomType>();
         RoomType rmtSelectedRoom = new RoomType();
 
@@ -141,8 +141,11 @@ namespace Hotel_Reservations
             //}
 
 
-            /*
-            int intNumOfDay = (dtpCheckOut.GetValue - dtpCheckIn.GetValue);
+            
+            TimeSpan tspDiff = (Convert.ToDateTime(dtpCheckOut.SelectedDate) - Convert.ToDateTime(dtpCheckIn.SelectedDate));
+            
+
+
             int intConveniceFee = intNumberOfDays * 10;
             txbQuote.Text = "Number of Nights:".PadRight(10) + intNumOfDay + Environment.NewLine +
                             "Rate Per Night:".PadRight(10) + strroomRate + Environment.NewLine +
@@ -151,7 +154,7 @@ namespace Hotel_Reservations
                             "Convenience Fee:" + intConvenienceFee.ToString() + Environment.NewLine +
                             "Total:";
         
-    */
+    
 
     }
     private void btnNRBack_Click(object sender, RoutedEventArgs e)
@@ -167,6 +170,7 @@ namespace Hotel_Reservations
             try
             {
                 //I need some sort of class to stor my data into and then add it to a list, then it can go to the json file
+                string strFilePath = @"..\..\..\Data Files\NewReservationTemp.json";
                 string strJsonData;
                 //strJsonData = JsonConvert.SerializeObject();
                 //File.WriteAllText(strFilePath, strJsonData);

@@ -26,7 +26,10 @@ namespace Hotel_Reservations
     /// </summary>
     public partial class RoomManagement : Window
     {
-       
+
+       // public int MyNumber { get; set; }
+
+
         RoomType rmtSelectedRoom = new RoomType();
 
         List<RoomType> lstRoom = new List<RoomType>();
@@ -54,6 +57,30 @@ namespace Hotel_Reservations
                 MessageBox.Show("Unable to find file. Please try again later.");
             }
         }
+
+        //public RoomManagement(int myNum)
+        //{
+        //    InitializeComponent();
+
+        //    MyNumber = myNum;
+
+        //    //Take Get room data from json file to use later in the document
+        //    try
+        //    {
+        //        strJsonData = File.ReadAllText(strFilePath);
+        //        lstRoom = JsonConvert.DeserializeObject<List<RoomType>>(strJsonData);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Unable to find file. Please try again later.");
+        //    }
+        //}
+
+        //public void DoSomething()
+        //{
+        //    //fdsdsfs
+        //}
 
         private void btnRMSave_Click(object sender, RoutedEventArgs e)
         {

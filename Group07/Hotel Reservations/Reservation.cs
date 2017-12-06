@@ -16,7 +16,8 @@ namespace Hotel_Reservations
         public string RoomType { get; set; }
         public string NumberOfRooms { get; set; }
         public string NumberOfNights { get; set; }
-        public string CheckInDate { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
         public double RoomPrice { get; set; }
         public double Total { get; set; }
 
@@ -26,7 +27,7 @@ namespace Hotel_Reservations
         {
         }
 
-        public Reservation(string firstName, string lastName, string phone, string email, string roomType, string numberOfRooms, string numberOfNights, string checkInDate, double price, double total)
+        public Reservation(string firstName, string lastName, string phone, string email, string roomType, string numberOfRooms, string numberOfNights, DateTime checkInDate, DateTime checkOutDate, double price, double total)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -36,6 +37,7 @@ namespace Hotel_Reservations
             NumberOfRooms = numberOfRooms;
             NumberOfNights = numberOfNights;
             CheckInDate = checkInDate;
+            CheckOutDate = checkOutDate;
             RoomType = roomType;
             Total = total;
         }

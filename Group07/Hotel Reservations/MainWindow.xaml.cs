@@ -39,6 +39,9 @@ namespace Hotel_Reservations
         private void btnNewReserv_Click(object sender, RoutedEventArgs e)
         {
             NewReservation NewReservWindow = new NewReservation();
+
+
+
             NewReservWindow.Show();
             this.Close();
         }
@@ -46,6 +49,11 @@ namespace Hotel_Reservations
         private void btnRoomMgmt_Click(object sender, RoutedEventArgs e)
         {
             RoomManagement RoomManagWindow = new RoomManagement();
+            //RoomManagement RoomManagWindow = new RoomManagement(7);
+
+            //RoomManagWindow.MyNumber = 7;
+            //RoomManagWindow.DoSomething();
+
             RoomManagWindow.Show();
             this.Close();
 
