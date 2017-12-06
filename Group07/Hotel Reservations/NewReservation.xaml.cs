@@ -81,10 +81,66 @@ namespace Hotel_Reservations
             btnNRBack.Visibility = Visibility.Visible;
             txbQuote.Visibility = Visibility.Visible;
             lblQuote.Visibility = Visibility.Visible;
-            
-           
+
+            intNumOfRoom = Convert.ToInt32(txbNumOfRoom.Text);
+            string strroomRate = cmbRoomType.Text;
+            double dblsubtotal, dbltax;
+            dblsubtotal = 0;
+            dbltax = dblsubtotal * 0.07;
+
+
+            try
+            {
+                int intSelectedIndex=cmbRoomType.SelectedIndex;
+                if (cmbRoomType.SelectedIndex != 0)
+                {
+                    //get the combo-box item content into a string
+                    string strRoomLookup = cmbRoomType.Items[intSelectedIndex].ToString();
+                    int intRoomLookup = strRoomLookup.IndexOf(':');
+                    strRoomLookup = strRoomLookup.Substring(intRoomLookup + 1).Trim();
+
+                    //get the room from the list that matches strRoomLookup 
+                    rmtSelectedRoom = lstRoom.Find(r => r.Type == strRoomLookup);
+
+                }
+                else
+                {
+                    
+                }
+            }
+            catch
+            {
+
+            }
+            //switch (roomrate)
+            //{
+            //    case "one king":
+            //        roomrate = "$179";
+            //        break;
+            //    case "one king deluxe":
+            //        roomrate = "$189";
+            //        break;
+            //    case "two queens":
+            //        roomrate = "$189";
+            //        break;
+            //    case "two queen deluxe":
+            //        roomrate = "$214";
+            //        break;
+            //}
+
+            int intNumOfDay = (dtpCheckOut.GetValue - dtpCheckIn.GetValue);
+            int intConveniceFee = intNumberOfDays * 10;
+            txbQuote.Text = "Number of Nights:".PadRight(10) + intNumOfDay + Environment.NewLine +
+                            "Rate Per Night:".PadRight(10) + strroomRate + Environment.NewLine +
+                            "Subtotal:" + dblsubtotal.ToString() + Environment.NewLine +
+                            "Tax:" + dbltax.ToString() + Environment.NewLine +
+                            "Convenience Fee:" + intConvenienceFee.ToString() + Environment.NewLine +
+                            "Total:";
         }
-        private void btnNRBack_Click(object sender, RoutedEventArgs e)
+
+
+    }
+    private void btnNRBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow MainWindow = new MainWindow();
             MainWindow.Show();
